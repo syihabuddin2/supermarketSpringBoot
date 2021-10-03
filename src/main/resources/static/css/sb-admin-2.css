@@ -5034,7 +5034,9 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
 }
 
 .card-title {
@@ -11006,8 +11008,8 @@ a:focus {
 .container-md,
 .container-lg,
 .container-xl {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
 }
 
 .scroll-to-top {

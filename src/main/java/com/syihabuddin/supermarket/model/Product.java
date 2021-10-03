@@ -1,13 +1,15 @@
 package com.syihabuddin.supermarket.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 /**
- * Created By Syihabuddin on 2021-09-18 23:26:29
+ * Created By Syihabuddin on 2021-09-19 23:57:16
  */
 
 @Entity
@@ -16,14 +18,30 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @NotBlank
     private int id;
+
+    @NotBlank
     private String productName;
+
+    @NotBlank
     private String category;
+
+    @Column(name = "conditionStatus")
+    @NotBlank
     private String condition;
+
+    @NotBlank
     private String description;
+
+    @NotBlank
     private String color;
-    private String size;
+
+    @NotBlank
     private int price;
+
+    @NotBlank
     private int stock;
 
     public int getId() {
@@ -74,14 +92,6 @@ public class Product {
         this.color = color;
     }
 
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
     public int getPrice() {
         return price;
     }
@@ -100,9 +110,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", productName=" + productName + ", category=" + category + ", condition="
-                + condition + ", description=" + description + ", color=" + color + ", size=" + size + ", price="
-                + price + ", stock=" + stock + "]";
+        return "Product [id=" + id + ", productName=" + productName + ", category=" + category + ", description="
+                + description + ", color=" + color + ", price=" + price + ", stock=" + stock + "]";
     }
 
 }
